@@ -1,16 +1,13 @@
 <ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <img slot="start" class="logo" src="../../assets/630.png">
+    <ion-title>
+      Raymundo Mayorquín
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header class="ion-no-border" collapse="condense">
-    <ion-toolbar>
-      <img slot="start" class="logo" src="../../assets/630.png">
-    </ion-toolbar>
-  </ion-header>
-
   <div class="login-container">
     <div class="illustration">
       <img src="../../assets/undraw_login.svg">
@@ -27,7 +24,7 @@
               Email
             </ion-label>
           </ion-item>
-          <ion-input name="email" placeholder="name@mail.com" class="ion-padding-horizontal">
+          <ion-input name="email" type="email" placeholder="name@mail.com" class="ion-padding-horizontal">
           </ion-input>
           <ion-item lines="none">
             <ion-icon name="lock-closed"></ion-icon>
@@ -35,7 +32,7 @@
               Contraseña
             </ion-label>
           </ion-item>
-          <ion-input name="password" placeholder="Contraseña" class="ion-padding-horizontal">
+          <ion-input name="password" type="password" placeholder="Contraseña" class="ion-padding-horizontal">
           </ion-input>
           <ion-button mode="ios">
             <ion-label class="big bold">
