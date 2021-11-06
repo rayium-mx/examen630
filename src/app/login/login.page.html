@@ -17,14 +17,15 @@
         <ion-label class="biggest bolder" color="dark">
           Registrate
         </ion-label>
-        <form name="login">
+        <form [formGroup]="loginForm">
           <ion-item lines="none">
             <ion-icon name="mail"></ion-icon>
             <ion-label class="ion-padding-start big bold">
               Email
             </ion-label>
           </ion-item>
-          <ion-input name="email" type="email" placeholder="name@mail.com" class="ion-padding-horizontal">
+          <ion-input formControlName="email" type="email" placeholder="name@mail.com" class="ion-padding-horizontal"
+            (ionChange)="formChanged('email')">
           </ion-input>
           <ion-item lines="none">
             <ion-icon name="lock-closed"></ion-icon>
@@ -32,9 +33,16 @@
               Contraseña
             </ion-label>
           </ion-item>
-          <ion-input name="password" type="password" placeholder="Contraseña" class="ion-padding-horizontal">
+          <ion-input formControlName="password" type="password" placeholder="Contraseña" class="ion-padding-horizontal"
+            (ionChange)="formChanged('password')">
           </ion-input>
-          <ion-button mode="ios">
+          <div class="error">
+            <ion-label>
+              <span *ngIf="!valid.email">{{error.email}}</span><br>
+              <span *ngIf="!valid.password">{{error.password}}</span>
+            </ion-label>
+          </div>
+          <ion-button mode="ios" (click)="logIn()" [disabled]="!loginForm.valid">
             <ion-label class="big bold">
               Crear cuenta
             </ion-label>

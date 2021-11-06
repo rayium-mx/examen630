@@ -28,6 +28,10 @@ img {
     ion-button>ion-label {
       color: var(--ion-color-light);
     }
+
+    .error>ion-label {
+        color: var(--ion-color-danger);
+    }
   }
 
   ion-input {
@@ -49,6 +53,11 @@ img {
     margin-top: 2em;
     width: 100%;
   }
+}
+
+.error {
+    font-size: 0.7em;
+    text-align: left;
 }
 
 @media screen and (max-width: 800px) {
