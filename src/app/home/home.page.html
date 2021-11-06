@@ -10,7 +10,7 @@
 
 <ion-content>
   <div class="users-container">
-    <ion-card class="userCard" *ngFor="let user of users">
+    <ion-card class="userCard animate__animated animate__zoomIn" *ngFor="let user of users">
       <ion-item lines="none">
         <ion-avatar slot="start">
           <img src="{{user.avatar}}">
@@ -25,7 +25,7 @@
         </ion-label>
       </ion-item>
     </ion-card>
-    <ion-button mode="ios" (click)="getUsers()" *ngIf="currentPage < 2">
+    <ion-button class="animate__animated animate__slideInUp" mode="ios" (click)="getUsers()" *ngIf="currentPage < 2">
       <ion-label class="bold">Cargar más</ion-label>
     </ion-button>
   </div>
