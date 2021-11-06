@@ -6,3 +6,7 @@ npm install
 
 Una vez que se instalen los modulos de node correr con el comando:
 ionic serve
+
+El proyecto se encuentra alojado en:
+https://examen630.web.app
+
