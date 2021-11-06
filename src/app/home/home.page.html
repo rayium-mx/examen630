@@ -1,10 +1,32 @@
 <ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      <ion-label class="bolder big" color="primary">
+        Usuarios
+      </ion-label>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <div class="users-container">
+    <ion-card class="userCard" *ngFor="let user of users">
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img src="{{user.avatar}}">
+        </ion-avatar>
+        <ion-label>
+          <div class="name bolder ion-text-wrap ion-text-center ion-padding-start">
+            {{user.first_name}} {{user.last_name}}
+          </div>
+          <div class="email bolder ion-text-wrap ion-text-center ion-padding-start">
+            {{user.email}}
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <ion-button mode="ios" (click)="getUsers()" *ngIf="currentPage < 2">
+      <ion-label class="bold">Cargar más</ion-label>
+    </ion-button>
+  </div>
 </ion-content>

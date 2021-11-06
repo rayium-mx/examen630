@@ -46,7 +46,8 @@ export class LoginPage implements OnInit {
   checkForCredentials() {
     const credentials = localStorage.getItem('credentials');
     if (credentials) {
-        this.router.navigate(['home']);
+      this.api.token = JSON.parse(credentials).token;
+      this.router.navigate(['home']);
     }
   }
 
