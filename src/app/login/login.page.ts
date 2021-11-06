@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../services/api/api.service';
 
 @Component({
   selector: 'app-login',
@@ -33,11 +34,20 @@ export class LoginPage implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private api: ApiService,
     private router: Router
   ) { }
 
   ngOnInit() {
     this.buildForm();
+    this.checkForCredentials();
+  }
+
+  checkForCredentials() {
+    const credentials = localStorage.getItem('credentials');
+    if (credentials) {
+        this.router.navigate(['home']);
+    }
   }
 
   buildForm() {
@@ -50,7 +60,6 @@ export class LoginPage implements OnInit {
 
   formChanged(field: string) {
     if (field === 'email') {
-      console.log(this.loginForm.controls.email.value)
       this.valid.email = this.loginForm.controls.email.valid;
     } else if (field === 'password') {
       this.valid.password = this.loginForm.controls.password.valid;
@@ -58,7 +67,13 @@ export class LoginPage implements OnInit {
   }
 
   logIn() {
-    this.router.navigate(['/home'])
+    const body = { email: 'eve.holt@reqres.in', password: 'pistol' };
+    this.api.logIn(body).subscribe(res => {
+      if (res.token) {
+        localStorage.setItem('credentials', JSON.stringify(res));
+        this.router.navigate(['/home'])
+      }
+    });
   }
 
 }
