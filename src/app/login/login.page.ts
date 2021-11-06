@@ -17,7 +17,7 @@ export class LoginPage implements OnInit {
 
   error = {
     email: '* El email ingresado no es válido',
-    password: '* Contraseña no insegura'
+    password: '* Contraseña no segura'
   }
 
   loginData: {
