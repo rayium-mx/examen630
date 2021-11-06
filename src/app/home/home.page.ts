@@ -23,7 +23,6 @@ export class HomePage implements OnInit {
     this.currentPage++;
     this.api.getUsers(this.currentPage).subscribe(res => {
       this.users = this.users.concat(res.data);
-      console.log(this.users)
     })
   }
 }
