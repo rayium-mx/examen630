@@ -24,3 +24,33 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+    font-family: Montserrat;
+    src: url('../src/assets/Montserrat-Regular.ttf');
+    //src: url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;900&display=swap');
+}
+
+* {
+    font-family: 'Montserrat' !important;
+}
+
+.big {
+    font-size: 1.4em;
+}
+
+.bigger {
+    font-size: 2em;
+}
+
+.biggest {
+    font-size: 3em;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.bolder {
+    font-weight: 800;
+}

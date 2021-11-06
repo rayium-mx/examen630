@@ -1,0 +1,51 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <img slot="start" class="logo" src="../../assets/630.png">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border" collapse="condense">
+    <ion-toolbar>
+      <img slot="start" class="logo" src="../../assets/630.png">
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="login-container">
+    <div class="illustration">
+      <img src="../../assets/undraw_login.svg">
+    </div>
+    <div class="form-container">
+      <ion-card class="form">
+        <ion-label class="biggest bolder" color="dark">
+          Registrate
+        </ion-label>
+        <form name="login">
+          <ion-item lines="none">
+            <ion-icon name="mail"></ion-icon>
+            <ion-label class="ion-padding-start big bold">
+              Email
+            </ion-label>
+          </ion-item>
+          <ion-input name="email" placeholder="name@mail.com" class="ion-padding-horizontal">
+          </ion-input>
+          <ion-item lines="none">
+            <ion-icon name="lock-closed"></ion-icon>
+            <ion-label class="ion-padding-start big bold">
+              Contraseña
+            </ion-label>
+          </ion-item>
+          <ion-input name="password" placeholder="Contraseña" class="ion-padding-horizontal">
+          </ion-input>
+          <ion-button mode="ios">
+            <ion-label class="big bold">
+              Crear cuenta
+            </ion-label>
+          </ion-button>
+        </form>
+      </ion-card>
+    </div>
+  </div>
+
+
+</ion-content>
